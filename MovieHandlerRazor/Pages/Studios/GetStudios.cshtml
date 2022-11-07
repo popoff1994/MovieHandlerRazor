@@ -1,0 +1,49 @@
+﻿@page
+@model MovieHandlerRazor.Pages.Studios.GetStudiosModel
+@{
+}
+<table class="table table-bordered" width="60%">
+    <col style="width: 7%">
+    <col style="width: 74%">
+    <col style="width: 10%">
+    <thead>
+        <tr class="btn-secondary active">
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div><h5>Id</h5></div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Name</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>HQ City</h5>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>No. Employees</h5>
+                    </div>
+                </div>
+                @if (@Model.Studios != null){
+                    foreach(var studio in Model.Studios){
+                        <tr>
+                        <td>@studio.Id</td>
+                        <td>@studio.Name</td>
+                        <td>@studio.HQCity</td>
+                    <td>@studio.NoOfEmployers</td>
+                </tr>
+                    }
+                }
+            </th>
+        </tr>
+    </thead>
+    <tbody>
